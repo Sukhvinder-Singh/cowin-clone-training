@@ -16,3 +16,7 @@ h1 {
     font-size: 4rem;
     @include generateClamp(2.5rem, 2.0000rem, 2.5000vw, 4rem)
 }
+
+p {
+    line-height: 1.5;
+}

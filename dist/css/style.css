@@ -81,4 +81,67 @@ h1 {
   font-size: 4rem;
   font-size: clamp(2.5rem, 2rem + 2.5vw, 4rem);
 }
+
+p {
+  line-height: 1.5;
+}
+
+.section {
+  display: block;
+  padding: 2.5em 0;
+}
+
+@media screen and (min-width: 992px) {
+  .section {
+    padding: 3.5em 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section {
+    padding: 5em 0;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: #9E2A2B;
+}
+
+.bg-primary {
+  background-color: #9E2A2B;
+}
+
+.text-secondary {
+  color: #E09F3E;
+}
+
+.bg-secondary {
+  background-color: #E09F3E;
+}
+
+.text-tertiary {
+  color: #FFF3B0;
+}
+
+.bg-tertiary {
+  background-color: #FFF3B0;
+}
+
+.text-callout {
+  color: #335C67;
+}
+
+.bg-callout {
+  background-color: #335C67;
+}
 /*# sourceMappingURL=style.css.map */

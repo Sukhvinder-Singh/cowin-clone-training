@@ -1,0 +1,13 @@
+.text-center {
+    text-align: center;
+}
+
+@each $color,
+$value in $pallete {
+    .text-#{$color} {
+        color: $value;
+    }
+    .bg-#{$color} {
+        background-color: $value;
+    }
+}

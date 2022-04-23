@@ -1,0 +1,21 @@
+// Screen sizes
+$xxs-screen: 480px;
+$xs-screen: 576px;
+$sm-screen: 768px;
+$md-screen: 992px;
+$lg-screen: 1200px;
+$xl-screen: 1440px;
+
+// Colors
+
+$primary: #9E2A2B;
+$secondary: #E09F3E;
+$tertiary: #FFF3B0;
+$callout: #335C67;
+
+$pallete: ("primary": $primary,
+    "secondary": $secondary,
+    "tertiary": $tertiary,
+    "callout": $callout);
+
+$lt-gray: rgba(0, 0, 0, 0.125);
