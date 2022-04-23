@@ -1,0 +1,1 @@
+{"version":3,"file":"app.js","mappings":";;AAAA,4B","sources":["webpack://cowin-clone/./src/js/index.js"],"sourcesContent":["console.log(\"test working\");"],"names":[],"sourceRoot":""}
