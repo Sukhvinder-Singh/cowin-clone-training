@@ -1,0 +1,42 @@
+.input-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1.5em;
+
+    label,
+    input,div {
+        display: block;
+        width: 100%;
+    }
+
+    label {
+        font-weight: bold;
+        color: $primary;
+        margin-bottom: 0.875em;
+    }
+
+    @include responsive_from($md-screen) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__pincode,
+    &__date {
+        width: 100%;
+        padding: 1em 1.25em;
+        font-size: 1rem;
+        font-family: "Open Sans", Arial, Helvetica, sans-serif;
+        color: $primary;
+        border: 0.125em solid $primary;
+        border-radius: 6px;
+    }
+
+    &__button {
+        @include responsive_from($md-screen) {
+            align-self: flex-end;
+        }
+    }
+}

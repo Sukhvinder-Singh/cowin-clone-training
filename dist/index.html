@@ -14,15 +14,27 @@
     <div class="app">
         <section class="section bg-tertiary">
             <div class="container">
-                <h1 class="text-primary text-center">Clone app demo</h1>
+                <h1 class="text-primary text-center">CoWin app third-party</h1>
+                <p class="text-center subtitle">A vaccination center finding demo app that used CoWin API</p>
             </div>
         </section>
         <section class="section">
             <div class="container">
+                <div class="input-area">
+                    <div>
+                        <label for="pin-code">Pin code</label>
+                        <input type="text" id="pin-code" class="input-area__pincode" />
+                    </div>
+                    <div>
+                        <label for="date">Select date</label>
+                        <input type="date" id="date" class="input-area__date" />
+                    </div>
+                    <a href="javascript:void(0);" class="button input-area__button" id="submit">Find vaccination centers</a>
+                </div>
             </div>
         </section>
     </div>
-    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="css/style.slim.min.css" />
 </body>
 
 </html>

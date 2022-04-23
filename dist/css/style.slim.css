@@ -1,20 +1,20 @@
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Viga&display=swap);
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Viga&display=swap");
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, pre,
+a, abbr, address, big, cite, code,
+del, em, img, ins, q, s,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
+fieldset, form, label,
+table, caption, tbody, tr, th, td,
 article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
+figure, footer, header,
+menu, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -25,8 +25,8 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article, aside, details, figure,
+footer, header, menu, section {
   display: block;
 }
 
@@ -38,11 +38,11 @@ ol, ul {
   list-style: none;
 }
 
-blockquote, q {
+ q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
+
 q:before, q:after {
   content: '';
   content: none;
@@ -203,31 +203,9 @@ p {
   color: #9E2A2B;
 }
 
-.bg-primary {
-  background-color: #9E2A2B;
-}
-
-.text-secondary {
-  color: #E09F3E;
-}
-
-.bg-secondary {
-  background-color: #E09F3E;
-}
-
-.text-tertiary {
-  color: #FFF3B0;
-}
-
 .bg-tertiary {
   background-color: #FFF3B0;
 }
-
-.text-callout {
-  color: #335C67;
-}
-
-.bg-callout {
-  background-color: #335C67;
-}
 /*# sourceMappingURL=style.css.map */
+
+/*# sourceMappingURL=style.slim.css.map*/
