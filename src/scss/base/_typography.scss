@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Viga&display=swap');
+
+h1,
+h2,
+h3 {
+    font-family: 'Viga', Arial, Helvetica, sans-serif;
+}
+
+@mixin generateClamp($minSize, $rem, $vw, $maxSize) {
+    $clampStr: clamp(#{$minSize}, #{$rem} + #{$vw}, #{$maxSize});
+    font-size: $maxSize;
+    font-size: $clampStr;
+}
+
+h1 {
+    font-size: 4rem;
+    @include generateClamp(2.5rem, 2.0000rem, 2.5000vw, 4rem)
+}

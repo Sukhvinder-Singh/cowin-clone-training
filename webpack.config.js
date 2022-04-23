@@ -21,5 +21,13 @@ module.exports = {
                 include: /min/
             }),
         ]
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                use: "babel-loader"
+            }
+        ]
     }
 }
