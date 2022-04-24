@@ -15,7 +15,7 @@ module.exports = {
         filename: "[name].js",
         clean: true,
     },
-    target: ["web", "es5"],
+    target: "web",
     devtool: "source-map",
     optimization: {
         minimize: true,
@@ -54,10 +54,6 @@ module.exports = {
         }),
     ],
     devServer: {
-        static: {
-            directory: path.join(__dirname, "dist")
-        },
-        historyApiFallback: true,
-        hot: true,
+        static: "dist",
     }
 }
