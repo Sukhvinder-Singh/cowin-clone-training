@@ -1,15 +1,14 @@
 const path = require("path");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     mode: "production",
     entry: {
-        "app": "./src/js/index.js",
         "app.min": "./src/js/index.js",
-        "style.slim": "./dist/css/style.css",
-        "style.slim.min": "./dist/css/style.min.css"
+        "style.min": "./src/scss/style.scss"
     },
     output: {
         path: path.resolve(__dirname, "./dist/js"),
@@ -33,15 +32,32 @@ module.exports = {
                 use: "babel-loader"
             },
             {
-                test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', "postcss-loader"]
+                test: /\.s[ac]ss$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', "postcss-loader", {
+                    loader: "sass-loader",
+                    options: {
+                        sourceMap: true,
+                    }
+                }]
             }
         ]
     },
     plugins: [
-        new FixStyleOnlyEntriesPlugin(),
+        new HTMLWebpackPlugin({
+            title: "Cowin third-party demo",
+            filename: "../index.html",
+            template: path.join(__dirname, "./public/index.html"),
+        }),
+        new RemoveEmptyScriptsPlugin(),
         new MiniCssExtractPlugin({
             filename: ({ chunk }) => `../css/${chunk.name.replace('/js/', '/css/')}.css`,
         }),
     ],
+    devServer: {
+        static: {
+            directory: path.join(__dirname, "dist")
+        },
+        historyApiFallback: true,
+        hot: true,
+    }
 }
