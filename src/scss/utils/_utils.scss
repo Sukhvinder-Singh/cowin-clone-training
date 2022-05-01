@@ -13,17 +13,20 @@ $value in $pallete {
     }
 }
 
-@for $i from 0 to 15 {
-    .pt-#{$i} {
-        padding-top: $i !important;
+@for $i from 1 through 15 {
+
+    $padding: $i - 1;
+
+    .pt-#{$padding} {
+        padding-top: $padding !important;
     }
-    .pr-#{$i} {
-        padding-right: $i !important;
+    .pr-#{$padding} {
+        padding-right: $padding !important;
     }
-    .pb-#{$i} {
-        padding-bottom: $i !important;
+    .pb-#{$padding} {
+        padding-bottom: $padding !important;
     }
-    .pl-#{$i} {
-        padding-left: $i !important;
+    .pl-#{$padding} {
+        padding-left: $padding !important;
     }
 }
