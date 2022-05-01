@@ -46,7 +46,7 @@ module.exports = {
         new HTMLWebpackPlugin({
             title: "Cowin third-party demo",
             filename: "../index.html",
-            template: path.join(__dirname, "./public/index.ejs"),
+            template: path.join(__dirname, "./public/index.html"),
         }),
         new RemoveEmptyScriptsPlugin(),
         new MiniCssExtractPlugin({

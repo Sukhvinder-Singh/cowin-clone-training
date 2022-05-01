@@ -7,7 +7,23 @@ $value in $pallete {
     .text-#{$color} {
         color: $value;
     }
+
     .bg-#{$color} {
         background-color: $value;
+    }
+}
+
+@for $i from 0 to 15 {
+    .pt-#{$i} {
+        padding-top: $i !important;
+    }
+    .pr-#{$i} {
+        padding-right: $i !important;
+    }
+    .pb-#{$i} {
+        padding-bottom: $i !important;
+    }
+    .pl-#{$i} {
+        padding-left: $i !important;
     }
 }
