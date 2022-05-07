@@ -1,18 +1,21 @@
 const path = require("path");
+const CustomWebpackUtil = require("./webpack.utils.js");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
-
-let jsOutputDirectory = "./dist/js";
-let cssOutputDirectory ="./dist/css";
+const jsBundleName = "app";
+const jsEntryPoint = "./src/js/index.js";
+const minifiedCssEntryPoint = "./src/scss/style.scss";
+const jsOutputDirectory = "./dist/js";
+const cssOutputDirectory = "./dist/css";
+const relativeJsToCssPath = path.relative(jsOutputDirectory, cssOutputDirectory);
 
 module.exports = {
     mode: "production",
     entry: {
-        "app.min": "./src/js/index.js",
-        "style.min": "./src/scss/style.scss"
+        ...CustomWebpackUtil.getBundleConfig(jsBundleName, jsEntryPoint, minifiedCssEntryPoint),
     },
     output: {
         path: path.resolve(__dirname, jsOutputDirectory),
@@ -54,7 +57,7 @@ module.exports = {
         }),
         new RemoveEmptyScriptsPlugin(),
         new MiniCssExtractPlugin({
-            filename: ({ chunk }) => `${path.relative(jsOutputDirectory, cssOutputDirectory)}/${chunk.name.replace('/js/', '/css/')}.css`,
+            filename: ({ chunk }) => `${relativeJsToCssPath}/${chunk.name.replace('/js/', '/css/')}.css`,
         }),
     ],
     devServer: {
