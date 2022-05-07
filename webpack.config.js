@@ -4,6 +4,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
+
+let jsOutputDirectory = "./dist/js";
+let cssOutputDirectory ="./dist/css";
+
 module.exports = {
     mode: "production",
     entry: {
@@ -11,7 +15,7 @@ module.exports = {
         "style.min": "./src/scss/style.scss"
     },
     output: {
-        path: path.resolve(__dirname, "./dist/js"),
+        path: path.resolve(__dirname, jsOutputDirectory),
         filename: "[name].js",
         clean: true,
     },
@@ -50,7 +54,7 @@ module.exports = {
         }),
         new RemoveEmptyScriptsPlugin(),
         new MiniCssExtractPlugin({
-            filename: ({ chunk }) => `../css/${chunk.name.replace('/js/', '/css/')}.css`,
+            filename: ({ chunk }) => `${path.relative(jsOutputDirectory, cssOutputDirectory)}/${chunk.name.replace('/js/', '/css/')}.css`,
         }),
     ],
     devServer: {
