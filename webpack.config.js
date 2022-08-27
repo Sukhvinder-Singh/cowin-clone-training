@@ -20,6 +20,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, jsOutputDirectory),
         filename: "[name].js",
+        publicPath: "",
         clean: true,
     },
     target: "web",
@@ -61,6 +62,14 @@ module.exports = {
         }),
     ],
     devServer: {
-        static: "dist",
+        static: {
+            directory: path.resolve(__dirname, "dist"),
+            watch: true,
+            publicPath: "",
+            serveIndex: true
+        },
+        watchFiles: ["src/**/*", "public/**/*"],
+        hot: false
+
     }
 }
