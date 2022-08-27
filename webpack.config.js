@@ -55,6 +55,7 @@ module.exports = {
             title: "Cowin third-party demo",
             filename: "../index.html",
             template: path.join(__dirname, "./public/index.html"),
+            publicPath: "js"
         }),
         new RemoveEmptyScriptsPlugin(),
         new MiniCssExtractPlugin({
@@ -70,6 +71,5 @@ module.exports = {
         },
         watchFiles: ["src/**/*", "public/**/*"],
         hot: false
-
     }
 }
